@@ -1,0 +1,61 @@
+# Generic template — safe to commit. Copy to config.yaml (gitignored) and fill in real values.
+# Never put names, account numbers, salaries, or case-specific dates in this file.
+
+applicant:
+  slug: applicant-slug
+
+sources_dir: sources
+ready_dir: ready
+
+identity_documents:
+  residence_visa: sources/residence-visa.pdf
+  emirates_id: sources/emirates-id.pdf
+  work_permit: sources/work-permit.pdf
+  residence_visa_output: residence-visa.pdf
+  emirates_id_output: emirates-id-front-and-back.pdf
+  work_permit_output: work-permit-front-and-back.pdf
+
+work_permit:
+  # PyMuPDF rotation degrees: front 270 = 90° clockwise, back 90 = 90° counter-clockwise
+  rotations: [270, 90]
+
+passport: sources/passport.pdf
+passport_output: passport-front-and-back.pdf
+
+photo: sources/passport-photo.jpg
+photo_output: passport-photo-{slug}.jpg
+
+employment_contract:
+  source: sources/employment-contract.pdf
+  first_page: 0
+  salary_page: 0
+  signature_page: 0
+
+bank_statements:
+  directory: sources/bank-statements
+  employer_salary_patterns:
+    - employer name salary
+  account_pattern: "000-000000-000"
+  usd_aed_rate: 3.6725
+  default_salary_usd: 10000.00
+  missing_salary_month: ""
+  missing_salary_explanation: |
+    Official salary pay date is the 25th of each month. When the 25th falls on a weekend
+    or public holiday, the bank may credit the account earlier or later. Consequently,
+    salary credits occasionally appear in the preceding or subsequent statement period
+    rather than the exact calendar month shown.
+
+    Please note that all required salary payments are present across the submitted
+    statement periods. Describe your specific payroll timing here.
+
+single_documents:
+  - source: sources/noc.pdf
+    output: noc-golden-visa.pdf
+  - source: sources/self-certificate.pdf
+    output: self-certificate-golden-visa.pdf
+  - source: sources/certificate-of-recognition.pdf
+    output: certificate-of-recognition.pdf
+  - source: sources/trade-licence.pdf
+    output: trade-licence.pdf
+  - source: sources/salary-clarification-letter.pdf
+    output: salary-and-employment-clarification-letter.pdf

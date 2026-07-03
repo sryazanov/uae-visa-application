@@ -1,0 +1,30 @@
+# Officer remarks (local only — do not commit)
+#
+# Copy this file to OFFICER_REMARKS.txt (gitignored)
+#
+# Format: paste remarks exactly as they appear on the GDRFA portal —
+# timestamp line, then the raw text (often Arabic, sometimes garbled/concatenated).
+# Ask the agent to translate each remark and fill in the English # Summary below.
+# Agent also drafts English explanation text for config.yaml and clarification letters.
+#
+# Status: open | resolved
+#
+# --- example (fictional — replace with your own remarks) ---
+
+DD-MM-YYYY HH:MM:SS
+كشف حساب ست اشهر موضح راتب الشهري + عقد عمل توظيف
+
+# Summary: (agent translates) 6 months bank statements showing monthly salary + employment contract
+# Status: open
+# Resolution:
+
+# ---
+
+# Next remark — paste below:
+
+DD-MM-YYYY HH:MM:SS
+(paste raw portal remark here)
+
+# Summary:
+# Status: open
+# Resolution:

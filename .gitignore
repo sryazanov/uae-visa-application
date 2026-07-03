@@ -1,0 +1,21 @@
+# Case-specific: personal documents, config, and notes
+sources/
+ready/
+config.yaml
+OFFICER_REMARKS.txt
+
+# Local OCR artifact (may contain document text)
+_ocr_tmp.png
+.cache/
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
