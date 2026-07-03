@@ -4,7 +4,7 @@ Use this checklist when gathering `sources/` and reviewing `ready/` before uploa
 
 **Portal:** apply and upload documents at [GDRFA Dubai Smart Services](https://smart.gdrfad.gov.ae/en/) (login with UAE Pass or registered account).  
 **Service info:** [Golden Residency services](https://www.gdrfad.gov.ae/en/services/335969f4-8045-11ed-4fe5-0050569629e8) on the GDRFA website.  
-**Skilled-worker category** (salary ≥ AED 30,000): see [official requirements](https://gdrfad.gov.ae/en/services/8ea80daa-f43e-11eb-0320-0050569629e8) — passport, employment contract or salary certificate, 6 months of salary bank statements, degree certificate, and professional licence if applicable.
+**Skilled-worker category** (salary ≥ AED 30,000): see [official requirements](https://gdrfad.gov.ae/en/services/8ea80daa-f43e-11eb-0320-0050569629e8). In practice the portal asks for a **certificate of recognition** (Ministry of Education), not a degree certificate with attestation — see row 12 below.
 
 > Requirements vary by Golden Visa category and may change. The portal may show **fewer upload slots initially** and add more after officer remarks. See [LEARNINGS.md](LEARNINGS.md) §2.
 
@@ -38,8 +38,6 @@ Use this checklist when gathering `sources/` and reviewing `ready/` before uploa
 | 12 | Certificate of recognition | Qualification proof; **Ministry of Education** | `certificate-of-recognition.pdf` | `certificate-of-recognition.pdf` | Yes |
 | 13 | Salary & employment clarification letter | Remarks / jurisdiction | `salary-clarification-letter.pdf` | `salary-and-employment-clarification-letter.pdf` | Yes |
 | 14 | Company trade licence | **Links contract ↔ free-zone certificates**; proves jurisdiction (e.g. DWTCA) | `trade-licence.pdf` | `trade-licence.pdf` | Yes |
-| 15 | Degree certificate + attestation | Skilled worker (official) | *add to `sources/`* | *manual* | No |
-| 16 | Professional licence | If profession requires it | *add to `sources/`* | *manual* | No |
 
 ---
 
@@ -53,18 +51,32 @@ Requirements vary by category and employer type. In practice for **free zone** e
 
 For **qualification** documents:
 
-- **Certificate of recognition** — issued by the **Ministry of Education** (UAE), not the employer.
+- **Certificate of recognition** — issued by the **Ministry of Education** (UAE). This is what the Golden Visa portal asks for in practice; a separate **degree certificate + attestation** has not been required in our experience.
 
 ---
 
 ## Bank statements detail
 
-For each of the **6 required salary months**, the pipeline produces one file:
+The portal requires **6 months of salary** visible on bank statements — meaning **six salary credits**, not necessarily exactly six statement PDFs.
+
+For each salary month the pipeline produces one file:
 
 | Output pattern | Meaning |
 |----------------|---------|
 | `01_Statement_Jan2026.pdf` | Salary credit found on this statement |
 | `03_Statement_NA_Feb2026.pdf` | No salary on this period — includes EXPLANATION box |
+
+### Seven statements for six salaries (observed)
+
+When pay day falls on a weekend or holiday, credits often land in the **previous or next** statement period. In that case, six calendar months of statements may show a **gap** (no credit in one period) or **two credits in one period** — even though all six payments were made.
+
+In practice it can be clearer to submit **seven statement periods** so every required salary credit is visible and the timeline is continuous. For example:
+
+- One period may show **two** salary credits (e.g. November + December payroll both in the December statement).
+- Another may show **none** — use a `Statement_NA_…` file with an EXPLANATION box pointing to where that payment appears.
+- The extra period covers the payment that would otherwise fall outside a strict six-month window.
+
+Explain the pattern in the clarification letter and in `missing_salary_explanation` in `config.yaml`. See [LEARNINGS.md](LEARNINGS.md) §3.
 
 Place raw statement PDFs in `sources/bank-statements/`. Configure OCR patterns and explanation text in `config.yaml`.
 
