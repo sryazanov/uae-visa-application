@@ -1,8 +1,12 @@
 # UAE Golden Visa — document preparation harness
 
-A small **man-in-the-loop** toolkit for preparing GDRFA portal uploads: compress PDFs, extract the right pages, highlight salary, add explanatory notes, and name files so reviewers can follow your submission.
+A small **man-in-the-loop** toolkit for preparing [GDRFA Dubai Smart Services](https://smart.gdrfad.gov.ae/en/) uploads: compress PDFs, extract the right pages, highlight salary, add explanatory notes, and name files so reviewers can follow your submission.
 
 **Generic tooling is committed.** Your personal documents, config, and officer remarks stay local (gitignored). Committed example files use placeholders only — never real names, account numbers, or salaries.
+
+## Document checklist
+
+See **[CHECKLIST.md](CHECKLIST.md)** for the full document list, `sources/` → `ready/` mapping, and links to the [GDRFA portal](https://smart.gdrfad.gov.ae/en/) and [Golden Residency services](https://www.gdrfad.gov.ae/en/services/335969f4-8045-11ed-4fe5-0050569629e8).
 
 ## Quick start
 
@@ -38,6 +42,7 @@ python prepare.py
 | `OFFICER_REMARKS.example.txt` | Yes | Template for `OFFICER_REMARKS.txt` |
 | `sources/` | **No** | Raw documents (passport, statements, etc.) |
 | `ready/` | **No** | Generated upload files |
+| `CHECKLIST.md` | Yes | Document checklist and GDRFA portal links |
 | `LEARNINGS.md` | Yes | Case lessons: remarks, linkage, portal behaviour |
 | `PRINCIPLES.md` | Yes | Portal rules and document standards |
 | `WORKFLOW.md` | Yes | Man-in-the-loop process with an AI agent |
@@ -64,6 +69,7 @@ Use an AI agent (Cursor, etc.) to **translate remarks**, draft English explanati
 
 ## Further reading
 
+- [CHECKLIST.md](CHECKLIST.md) — documents to gather, portal links, upload checklist
 - [LEARNINGS.md](LEARNINGS.md) — remark patterns, linkage strategy, portal tips
 - [PRINCIPLES.md](PRINCIPLES.md) — upload constraints and naming conventions
 - [WORKFLOW.md](WORKFLOW.md) — remark handling, cover letters, collaboration pattern

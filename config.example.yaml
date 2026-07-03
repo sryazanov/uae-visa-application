@@ -51,8 +51,8 @@ bank_statements:
 single_documents:
   - source: sources/noc.pdf
     output: noc-golden-visa.pdf
-  - source: sources/self-certificate.pdf
-    output: self-certificate-golden-visa.pdf
+  - source: sources/salary-certificate.pdf
+    output: salary-certificate-golden-visa.pdf
   - source: sources/certificate-of-recognition.pdf
     output: certificate-of-recognition.pdf
   - source: sources/trade-licence.pdf

@@ -29,7 +29,7 @@ This repo is a **harness**: repeatable automation plus human (and AI) judgment a
 2. `pip install -r requirements.txt` and install [Tesseract](https://github.com/tesseract-ocr/tesseract).
 3. `cp config.example.yaml config.yaml`
 4. `cp OFFICER_REMARKS.example.txt OFFICER_REMARKS.txt` — paste portal remarks here as they arrive
-5. Create `sources/` and add documents (never commit them).
+5. Create `sources/` and add documents (never commit them). Use [CHECKLIST.md](CHECKLIST.md) as a guide.
 6. Open each PDF once to confirm paths and page numbers in config.
 7. `python prepare.py` → inspect every file in `ready/` visually.
 8. Upload to portal. **Note:** you may not have enough upload slots on the first pass — more are often added after remarks ([LEARNINGS.md](LEARNINGS.md) §2).

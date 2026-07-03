@@ -5,8 +5,9 @@ When working in this repository, read these files first:
 1. **`OFFICER_REMARKS.txt`** — current and past GDRFA portal remarks (gitignored; may be missing until the user copies `OFFICER_REMARKS.example.txt`)
 2. **`config.yaml`** — case-specific paths, page indices, and explanation text (gitignored)
 3. **`PRINCIPLES.md`** — document rules and naming conventions
-4. **`LEARNINGS.md`** — remark diagnosis, linkage strategy, portal behaviour
-5. **`WORKFLOW.md`** — man-in-the-loop process
+4. **`CHECKLIST.md`** — required documents and GDRFA portal links
+5. **`LEARNINGS.md`** — remark diagnosis, linkage strategy, portal behaviour
+6. **`WORKFLOW.md`** — man-in-the-loop process
 
 Generated uploads live in `ready/` (gitignored). Source documents live in `sources/` (gitignored).
 
